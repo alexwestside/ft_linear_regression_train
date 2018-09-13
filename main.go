@@ -5,22 +5,35 @@ import (
 	"fmt"
 )
 
-func main() {
+const pathToDataSrt = "dataset/data.csv"
 
-	pathToDataSrt := "dataset/data.csv"
+func main() {
 
 	lnReg := model.NewLnReg(pathToDataSrt)
 
-	df, errRead := lnReg.Reader()
+	errCMD := lnReg.NewCommand()
+	if errCMD != nil {
+		fmt.Println(errCMD)
+	}
+
+	df, errRead := lnReg.Read()
 	if errRead != nil {
 		fmt.Println(errRead)
 	}
 
-	t0, t1, divi, errTrain := lnReg.Trainer(df)
+	errTrain := lnReg.Train(df)
 	if errRead != nil {
 		fmt.Println(errTrain)
 	}
 
-	fmt.Println(t0, t1, divi)
+	errWrite := lnReg.Write()
+	if errWrite != nil {
+		fmt.Println(errTrain)
+	}
+
+	errView := lnReg.View(df)
+	if errView != nil {
+		fmt.Println(errTrain)
+	}
 
 }

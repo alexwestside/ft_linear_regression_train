@@ -5,7 +5,11 @@ import (
 	"encoding/csv"
 )
 
-func (l *Lnreg) Reader() ([][]string, error) {
+type Reader interface {
+	Read() ([][]string, error)
+}
+
+func (l *Model) Read() ([][]string, error) {
 
 	file, err := os.Open(l.File)
 	if err != nil {

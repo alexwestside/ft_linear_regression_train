@@ -5,7 +5,11 @@ import (
 	"log"
 )
 
-func (l *Lnreg) Closer(w io.Closer) {
+type Closer interface {
+	Closer(w io.Closer)
+}
+
+func (l *Model) Closer(w io.Closer) {
 	err := w.Close()
 	if err != nil {
 		log.Fatal(err)

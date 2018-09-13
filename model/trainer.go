@@ -2,11 +2,15 @@ package model
 
 import "math"
 
-func (l *Lnreg) Trainer(df [][]string) (float64, float64, float64, error) {
+type Trainer interface {
+	Train(df [][]string) (error)
+}
 
-	normVals, err := l.Normalizer(df)
+func (l *Model) Train(df [][]string) (error) {
+
+	normVals, err := l.Normalize(df)
 	if err != nil {
-		return 0.0, 0.0, 0.0, err
+		return err
 	}
 
 	var t0, t1 float64
@@ -14,13 +18,16 @@ func (l *Lnreg) Trainer(df [][]string) (float64, float64, float64, error) {
 	for {
 		tmpT0, tmpT1 := nextIteration(t0, t1, normVals, lRate)
 		if tmpT0 == t0 && tmpT1 == t1 {
-			return t0, t1, deviation(t0, t1, normVals), nil
+			l.Teth0 = t0
+			l.Teth1 = t1
+			l.Dvi = deviation(t0, t1, normVals)
+			return nil
 		} else {
 			t0, t1 = tmpT0, tmpT1
 		}
 	}
 
-	return 0.0, 0.0, 0.0, err
+	return err
 }
 
 func nextIteration(t0 float64, t1 float64, df [][]float64, lRate float64) (float64, float64) {
@@ -46,7 +53,7 @@ func deviation(t0 float64, t1 float64, df [][]float64) float64 {
 		dvi += math.Pow((t0+t1*record[0])-record[1], 2)
 	}
 
-	dvi = math.Sqrt(dvi) / float64(len(df) - 1)
+	dvi = math.Sqrt(dvi) / float64(len(df)-1)
 
 	return dvi
 }

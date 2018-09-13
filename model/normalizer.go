@@ -4,17 +4,21 @@ import (
 	"strconv"
 )
 
-func (l *Lnreg) Normalizer(df [][]string) ([][]float64, error) {
+type Normalizer interface {
+	Normalize(df [][]string) ([][]float64, error)
+}
+
+func (l *Model) Normalize(df [][]string) ([][]float64, error) {
 
 	dfNew, err := castToFloat(df)
 	if err != nil {
 		return nil, err
 	}
 
-	minVal, maxVal := calcMinMaxVal(dfNew)
+	l.MinVal, l.MaxVal = calcMinMaxVal(dfNew)
 
 	for i, val := range dfNew {
-		dfNew[i][0] = normalizeIT(minVal, maxVal, val[0])
+		dfNew[i][0] = l.NormalizeIT(l.MinVal, l.MaxVal, val[0])
 	}
 
 	return dfNew, nil
@@ -40,7 +44,7 @@ func castToFloat(df [][]string) ([][]float64, error) {
 
 }
 
-func normalizeIT(minVal float64, maxVal float64, val float64) float64 {
+func (l *Model) NormalizeIT(minVal float64, maxVal float64, val float64) float64 {
 	return (val - minVal) / (maxVal - minVal)
 }
 
