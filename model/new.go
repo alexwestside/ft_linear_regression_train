@@ -16,6 +16,7 @@ type Model struct {
 	Viewer
 	Writer
 	Predicter
+	ErrorsHandler
 }
 
 func NewLnReg(pathTodataSet string) *Model {
