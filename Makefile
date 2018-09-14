@@ -17,12 +17,14 @@ DOCKERPUSH=$(DOCKER) push
 
 DEP=dep ensure
 
-all: go-build docker-build clean
+all: go-build
 
 go-build:
 	@echo "Golang build executable..."
 	$(DEP)
 	GOOS=$(GOOS) GOARCH=$(GOARCH) CGO_ENABLED=$(CGO_ENABLED) $(GOBUILD) -o $(BIN) $(GOFLAGS) main.go
+	mv $(BIN) ../ft_linear_regression/bin
+	cp dataset/data.csv ../ft_linear_regression/data
 
 clean:
 	@echo "Clean"
