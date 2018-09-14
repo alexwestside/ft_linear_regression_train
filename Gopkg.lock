@@ -3,71 +3,56 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:cd931ea772312521f21e9369400f1f29ca72603903b6e0a1d09f82eb20c07b16"
   name = "github.com/ajstarks/svgo"
   packages = ["."]
-  pruneopts = "UT"
   revision = "7338bd80e7908a1cdc427fd4d222f883b254f771"
 
 [[projects]]
   branch = "master"
-  digest = "1:7a6377256f670508711c56c25556d639e673c0fa0f519c5a758fdcbfc8af9ac8"
   name = "github.com/golang/freetype"
   packages = [
     ".",
     "raster",
-    "truetype",
+    "truetype"
   ]
-  pruneopts = "UT"
   revision = "e2365dfdc4a05e4b8299a783240d4a7d5a65d4e4"
 
 [[projects]]
-  digest = "1:870d441fe217b8e689d7949fef6e43efbc787e50f200cb1e70dbca9204a1d6be"
   name = "github.com/inconshreveable/mousetrap"
   packages = ["."]
-  pruneopts = "UT"
   revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
   version = "v1.0"
 
 [[projects]]
-  digest = "1:db23aee6f0ff15fbcd0559d660f91d6b738baeeca46d953396b2fdcec93e1260"
   name = "github.com/jung-kurt/gofpdf"
   packages = ["."]
-  pruneopts = "UT"
   revision = "14c1db30737a138f8d9797cffea58783892b2fae"
   version = "v1.0.0"
 
 [[projects]]
   branch = "master"
-  digest = "1:79d2dd4ecf0c5b24e0a372768fd523242098338ab4453b3422bfe6ef15627b88"
   name = "github.com/llgcode/draw2d"
   packages = [
     ".",
     "draw2dbase",
-    "draw2dimg",
+    "draw2dimg"
   ]
-  pruneopts = "UT"
   revision = "f52c8a71aff06ab8df41843d33ab167b36c971cd"
 
 [[projects]]
-  digest = "1:645cabccbb4fa8aab25a956cbcbdf6a6845ca736b2c64e197ca7cbb9d210b939"
   name = "github.com/spf13/cobra"
   packages = ["."]
-  pruneopts = "UT"
   revision = "ef82de70bb3f60c65fb8eebacbb2d122ef517385"
   version = "v0.0.3"
 
 [[projects]]
-  digest = "1:dab83a1bbc7ad3d7a6ba1a1cc1760f25ac38cdf7d96a5cdd55cd915a4f5ceaf9"
   name = "github.com/spf13/pflag"
   packages = ["."]
-  pruneopts = "UT"
   revision = "9a97c102cda95a86cec2345a6f09f55a939babf5"
   version = "v1.0.2"
 
 [[projects]]
   branch = "master"
-  digest = "1:6d809b59461cb45fc16f6aad67a3d81066e5f9098abf8b13eb4c49a03a6e2ef9"
   name = "golang.org/x/image"
   packages = [
     "draw",
@@ -75,14 +60,12 @@
     "math/f64",
     "math/fixed",
     "tiff",
-    "tiff/lzw",
+    "tiff/lzw"
   ]
-  pruneopts = "UT"
   revision = "c73c2afc3b812cdd6385de5a50616511c4a3d458"
 
 [[projects]]
   branch = "master"
-  digest = "1:fe3be90b72e3d862e4b1cc36669adf162db0004d7008793dbf7bf1538e88eb82"
   name = "gonum.org/v1/gonum"
   packages = [
     "blas",
@@ -96,14 +79,12 @@
     "lapack",
     "lapack/gonum",
     "lapack/lapack64",
-    "mat",
+    "mat"
   ]
-  pruneopts = "UT"
   revision = "20644dbe1a24b75924cac09e625a63b43203528f"
 
 [[projects]]
   branch = "master"
-  digest = "1:c8cb78d3fba69dac2d88b75e5aadab42fea99710704210fcbe2a7570ad6aefe6"
   name = "gonum.org/v1/plot"
   packages = [
     ".",
@@ -116,28 +97,19 @@
     "vg/vgeps",
     "vg/vgimg",
     "vg/vgpdf",
-    "vg/vgsvg",
+    "vg/vgsvg"
   ]
-  pruneopts = "UT"
   revision = "5f3c436ce602d80b13f2936b6bf149515198d6a4"
 
 [[projects]]
-  digest = "1:342378ac4dcb378a5448dd723f0784ae519383532f5e70ade24132c4c8693202"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  pruneopts = "UT"
   revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
   version = "v2.2.1"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = [
-    "github.com/spf13/cobra",
-    "gonum.org/v1/plot",
-    "gonum.org/v1/plot/plotter",
-    "gonum.org/v1/plot/vg",
-    "gopkg.in/yaml.v2",
-  ]
+  inputs-digest = "15d973a4bcc09ac305a7ae90f0002cf0cf897fd9ee7f7eb6efbd0b9058231482"
   solver-name = "gps-cdcl"
   solver-version = 1
