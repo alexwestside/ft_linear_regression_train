@@ -1,6 +1,8 @@
 package model
 
-import "math"
+import (
+	"math"
+)
 
 type Trainer interface {
 	Train(df [][]string) (error)

@@ -19,8 +19,6 @@ type Model struct {
 	ErrorsHandler
 }
 
-func NewLnReg(pathTodataSet string) *Model {
-	return &Model{
-		File: pathTodataSet,
-	}
+func NewLnReg() *Model {
+	return &Model{}
 }

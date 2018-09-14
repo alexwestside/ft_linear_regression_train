@@ -9,9 +9,9 @@ type Reader interface {
 	Read() ([][]string, error)
 }
 
-func (l *Model) Read() ([][]string, error) {
+func (l *Model) Read(path string) ([][]string, error) {
 
-	file, err := os.Open(l.File)
+	file, err := os.Open(path)
 	if err != nil {
 		return nil, err
 	}
