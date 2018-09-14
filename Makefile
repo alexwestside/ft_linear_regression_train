@@ -25,8 +25,3 @@ go-build:
 	GOOS=$(GOOS) GOARCH=$(GOARCH) CGO_ENABLED=$(CGO_ENABLED) $(GOBUILD) -o $(BIN) $(GOFLAGS) main.go
 	mv $(BIN) ../ft_linear_regression/bin
 	cp dataset/data.csv ../ft_linear_regression/data
-
-clean:
-	@echo "Clean"
-	$(GOCLEAN)
-	rm -f $(BINARY)
