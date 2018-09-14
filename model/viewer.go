@@ -59,7 +59,7 @@ func (l *Model) View(df [][]string) error {
 
 	//// Save the plot to a PNG file.
 	p.Add(s, line)
-	if err := p.Save(15*vg.Centimeter, 15*vg.Centimeter, "./graphs/first_regression.png"); err != nil {
+	if err := p.Save(15*vg.Centimeter, 15*vg.Centimeter, "./graphs/regression.png"); err != nil {
 		fmt.Println(err)
 	}
 
