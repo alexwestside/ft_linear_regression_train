@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-const outFile = "data.yaml"
+const outFile = "stdout/data.yaml"
 
 type Writer interface {
 	Write(t0 float64, t1 float64, dvi float64) error

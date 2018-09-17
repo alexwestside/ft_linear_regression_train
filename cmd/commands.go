@@ -3,7 +3,6 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 	"github.com/ft_linear_regression_train/regression"
-	"fmt"
 )
 
 func Commands(rootCmd *cobra.Command) *cobra.Command {
@@ -37,7 +36,6 @@ func view() (cmd *cobra.Command) {
 				handler("target")
 			} else {
 				regression.ErrorHandler(regression.NewModel().Calculation(path).View())
-				fmt.Println("SUCCESS: Train model and get Graph in file")
 			}
 		},
 	}

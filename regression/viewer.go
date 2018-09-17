@@ -11,6 +11,8 @@ import (
 	"errors"
 )
 
+const pngFile = "stdout/regression.png"
+
 type Viewer interface {
 	View(df [][]string) error
 }
@@ -64,9 +66,11 @@ func (m *Model) View() error {
 
 	//// Save the plot to a PNG file.
 	p.Add(s, line)
-	if err := p.Save(15*vg.Centimeter, 15*vg.Centimeter, "./stdout/regression.png"); err != nil {
+	if err := p.Save(15*vg.Centimeter, 15*vg.Centimeter, pngFile); err != nil {
 		fmt.Println(err)
 	}
+
+	fmt.Println(fmt.Sprintf("SUCCESS: Train model and get Graph in %s", pngFile))
 
 	return nil
 }
