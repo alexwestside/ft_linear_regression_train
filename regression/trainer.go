@@ -1,16 +1,21 @@
-package model
+package regression
 
 import (
 	"math"
+	"errors"
 )
 
 type Trainer interface {
 	Train(df [][]string) (error)
 }
 
-func (l *Model) Train(df [][]string) (error) {
+func (m *Model) Train() (error) {
 
-	normVals, err := l.Normalize(df)
+	if len(m.DataFrame.DF) == 0 {
+		return errors.New("DataFrame is empty...you need read some fo train Model")
+	}
+
+	normVals, err := m.Normalize(m.DataFrame.DF)
 	if err != nil {
 		return err
 	}
@@ -20,9 +25,9 @@ func (l *Model) Train(df [][]string) (error) {
 	for {
 		tmpT0, tmpT1 := nextIteration(t0, t1, normVals, lRate)
 		if tmpT0 == t0 && tmpT1 == t1 {
-			l.Teth0 = t0
-			l.Teth1 = t1
-			l.Dvi = deviation(t0, t1, normVals)
+			m.DataResult.Teth0 = t0
+			m.DataResult.Teth1 = t1
+			m.DataResult.Dvi = deviation(t0, t1, normVals)
 			return nil
 		} else {
 			t0, t1 = tmpT0, tmpT1

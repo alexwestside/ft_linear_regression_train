@@ -1,4 +1,4 @@
-package model
+package regression
 
 import (
 	"strconv"
@@ -8,17 +8,17 @@ type Normalizer interface {
 	Normalize(df [][]string) ([][]float64, error)
 }
 
-func (l *Model) Normalize(df [][]string) ([][]float64, error) {
+func (m *Model) Normalize(df [][]string) ([][]float64, error) {
 
 	dfNew, err := castToFloat(df)
 	if err != nil {
 		return nil, err
 	}
 
-	l.MinVal, l.MaxVal = calcMinMaxVal(dfNew)
+	m.DataResult.MinVal, m.DataResult.MaxVal = calcMinMaxVal(dfNew)
 
 	for i, val := range dfNew {
-		dfNew[i][0] = l.NormalizeIT(l.MinVal, l.MaxVal, val[0])
+		dfNew[i][0] = m.NormalizeIT(m.DataResult.MinVal, m.DataResult.MaxVal, val[0])
 	}
 
 	return dfNew, nil

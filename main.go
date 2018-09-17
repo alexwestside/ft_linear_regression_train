@@ -1,17 +1,14 @@
 package main
 
 import (
-	"github.com/ft_linear_regression_train/model"
-	"os"
+	"github.com/ft_linear_regression_train/cmd"
+	"github.com/spf13/cobra"
 )
 
 func main() {
 
-	var err error
-	lnReg := model.NewLnReg()
-
-	err = lnReg.NewCommand().Execute()
-	lnReg.ErrorHandler(err)
-
-	os.Exit(0)
+	cmd.Commands(&cobra.Command{
+		Short: "The Linear Regression train service",
+		Long:  "Train service",
+	}).Execute()
 }

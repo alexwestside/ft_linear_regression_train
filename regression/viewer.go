@@ -1,4 +1,4 @@
-package model
+package regression
 
 import (
 	"gonum.org/v1/plot"
@@ -8,24 +8,29 @@ import (
 	"image/color"
 	"strconv"
 	"fmt"
+	"errors"
 )
 
 type Viewer interface {
 	View(df [][]string) error
 }
 
-func (l *Model) View(df [][]string) error {
+func (m *Model) View() error {
 
-	pts := make(plotter.XYs, len(df))
-	ptsPred := make(plotter.XYs, len(df))
+	if len(m.DataFrame.DF) == 0 {
+		return errors.New("DataFrame is empty...you need read some for view Model")
+	}
+
+	pts := make(plotter.XYs, len(m.DataFrame.DF))
+	ptsPred := make(plotter.XYs, len(m.DataFrame.DF))
 
 	p, err := plot.New()
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	for i := range df {
-		val1, val2, err := parseFloat(df[i][0], df[i][1])
+	for i := range m.DataFrame.DF {
+		val1, val2, err := parseFloat(m.DataFrame.DF[i][0], m.DataFrame.DF[i][1])
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -33,7 +38,7 @@ func (l *Model) View(df [][]string) error {
 		pts[i].Y = val2
 
 		ptsPred[i].X = val1
-		ptsPred[i].Y = l.Predict(val1)
+		ptsPred[i].Y = m.Predict(val1)
 	}
 
 	p.X.Label.Text = "km"
@@ -59,7 +64,7 @@ func (l *Model) View(df [][]string) error {
 
 	//// Save the plot to a PNG file.
 	p.Add(s, line)
-	if err := p.Save(15*vg.Centimeter, 15*vg.Centimeter, "./graphs/regression.png"); err != nil {
+	if err := p.Save(15*vg.Centimeter, 15*vg.Centimeter, "./stdout/regression.png"); err != nil {
 		fmt.Println(err)
 	}
 
