@@ -10,12 +10,14 @@ type ModelData struct {
 }
 
 type ModelResult struct {
-	Teth0   float64
-	Teth1   float64
+	Teta0   float64
+	Teta1   float64
 	Dvi     float64
 	MinVal  float64
 	MaxVal  float64
 }
+
+
 
 type Model struct {
 	DataFrame ModelData
@@ -32,3 +34,6 @@ func NewModel() *Model {
 		DataResult: ModelResult{},
 	}
 }
+
+
+

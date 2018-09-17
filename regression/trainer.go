@@ -20,37 +20,37 @@ func (m *Model) Train() (error) {
 		return err
 	}
 
-	var t0, t1 float64
+	var teta0, teta1 float64
 	lRate := 0.1
 	for {
-		tmpT0, tmpT1 := nextIteration(t0, t1, normVals, lRate)
-		if tmpT0 == t0 && tmpT1 == t1 {
-			m.DataResult.Teth0 = t0
-			m.DataResult.Teth1 = t1
-			m.DataResult.Dvi = deviation(t0, t1, normVals)
+		tmpT0, tmpT1 := nextIteration(teta0, teta1, normVals, lRate)
+		if tmpT0 == teta0 && tmpT1 == teta1 {
+			m.DataResult.Teta0 = teta0
+			m.DataResult.Teta1 = teta1
+			m.DataResult.Dvi = deviation(teta0, teta1, normVals)
 			return nil
 		} else {
-			t0, t1 = tmpT0, tmpT1
+			teta0, teta1 = tmpT0, tmpT1
 		}
 	}
 
 	return err
 }
 
-func nextIteration(t0 float64, t1 float64, df [][]float64, lRate float64) (float64, float64) {
+func nextIteration(teta0 float64, teta1 float64, df [][]float64, lRate float64) (float64, float64) {
 
 	tmpT0 := 0.0
 	tmpT1 := 0.0
 
 	for _, record := range df {
-		tmpT0 += (t0 + t1*record[0]) - record[1]
-		tmpT1 += ((t0 + t1*record[0]) - record[1]) * record[0]
+		tmpT0 += (teta0 + teta1*record[0]) - record[1]
+		tmpT1 += ((teta0 + teta1*record[0]) - record[1]) * record[0]
 	}
 
-	t0 -= (lRate * tmpT0) / float64(len(df))
-	t1 -= (lRate * tmpT1) / float64(len(df))
+	teta0 -= (lRate * tmpT0) / float64(len(df))
+	teta1 -= (lRate * tmpT1) / float64(len(df))
 
-	return t0, t1
+	return teta0, teta1
 }
 
 func deviation(t0 float64, t1 float64, df [][]float64) float64 {

@@ -10,8 +10,7 @@ func RootCmd() (cmd *cobra.Command) {
 		Short: "The Linear Regression train service",
 		Long:  "Train service",
 	}
-	//NewFlags(rootCmd)
-	Commands(rootCmd)
-	return
+	//Commands(rootCmd)
+	return rootCmd
 }
 

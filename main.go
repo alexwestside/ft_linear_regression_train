@@ -8,7 +8,8 @@ import (
 func main() {
 
 	cmd.Commands(&cobra.Command{
+		Use:   "app",
 		Short: "The Linear Regression train service",
-		Long:  "Train service",
+		Long:  "PROJECT: ft_linear_regression (train regression)",
 	}).Execute()
 }

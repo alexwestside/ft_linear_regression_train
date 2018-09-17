@@ -4,17 +4,10 @@ import (
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"os"
+	"fmt"
 )
 
 const outFile = "data.yaml"
-
-//type Data struct {
-//	Teth0 float64
-//	Teth1 float64
-//	Min   float64
-//	Max   float64
-//	Dvi   float64
-//}
 
 type Writer interface {
 	Write(t0 float64, t1 float64, dvi float64) error
@@ -29,6 +22,8 @@ func (m *Model) Write() error {
 	ErrorHandler(err)
 
 	ErrorHandler(ioutil.WriteFile(outFile, blob, 777))
+
+	fmt.Println(fmt.Sprintf("SUCCESS: Train model and get Result in %s", outFile))
 
 	return nil
 }

@@ -22,7 +22,6 @@ func train() (cmd *cobra.Command) {
 				handler("target")
 			} else {
 				regression.ErrorHandler(regression.NewModel().Calculation(path).Write())
-				fmt.Println("Train model and get result in file")
 			}
 		},
 	}
@@ -38,7 +37,7 @@ func view() (cmd *cobra.Command) {
 				handler("target")
 			} else {
 				regression.ErrorHandler(regression.NewModel().Calculation(path).View())
-				fmt.Println("Train model and get graph in file")
+				fmt.Println("SUCCESS: Train model and get Graph in file")
 			}
 		},
 	}
