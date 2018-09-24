@@ -5,10 +5,6 @@ import (
 	"errors"
 )
 
-type Trainer interface {
-	Train(df [][]string) (error)
-}
-
 func (m *Model) Train() (error) {
 
 	if len(m.DataFrame.DF) == 0 {

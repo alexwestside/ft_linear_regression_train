@@ -10,17 +10,15 @@ type ModelData struct {
 }
 
 type ModelResult struct {
-	Teta0   float64
-	Teta1   float64
-	Dvi     float64
-	MinVal  float64
-	MaxVal  float64
+	Teta0  float64
+	Teta1  float64
+	Dvi    float64
+	MinVal float64
+	MaxVal float64
 }
 
-
-
 type Model struct {
-	DataFrame ModelData
+	DataFrame  ModelData
 	DataResult ModelResult
 }
 
@@ -30,10 +28,7 @@ type Commander interface {
 
 func NewModel() *Model {
 	return &Model{
-		DataFrame: ModelData{},
+		DataFrame:  ModelData{},
 		DataResult: ModelResult{},
 	}
 }
-
-
-

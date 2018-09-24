@@ -4,10 +4,6 @@ import (
 	"strconv"
 )
 
-type Normalizer interface {
-	Normalize(df [][]string) ([][]float64, error)
-}
-
 func (m *Model) Normalize(df [][]string) ([][]float64, error) {
 
 	dfNew, err := castToFloat(df)

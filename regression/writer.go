@@ -9,10 +9,6 @@ import (
 
 const outFile = "stdout/data.yaml"
 
-type Writer interface {
-	Write(t0 float64, t1 float64, dvi float64) error
-}
-
 func (m *Model) Write() error {
 
 	_, err := os.Create(outFile)

@@ -6,10 +6,6 @@ import (
 	"errors"
 )
 
-type Reader interface {
-	Read() ([][]string, error)
-}
-
 func (m *Model) Read(path string) error {
 
 	ErrorHandler(checkFile(path))
@@ -19,7 +15,6 @@ func (m *Model) Read(path string) error {
 		return err
 	}
 	defer m.Closer(file)
-
 
 	data := csv.NewReader(file)
 
@@ -33,7 +28,6 @@ func (m *Model) Read(path string) error {
 
 	return nil
 }
-
 
 func checkFile(path string) error {
 	f, err := os.Stat(path)

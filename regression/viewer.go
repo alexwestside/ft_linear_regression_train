@@ -13,10 +13,6 @@ import (
 
 const pngFile = "stdout/regression.png"
 
-type Viewer interface {
-	View(df [][]string) error
-}
-
 func (m *Model) View() error {
 
 	if len(m.DataFrame.DF) == 0 {
