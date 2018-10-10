@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-const outFile = "stdout/data.yaml"
+const outFile = "data/train_out.yaml"
 
 func (m *Model) Write() error {
 
@@ -19,7 +19,17 @@ func (m *Model) Write() error {
 
 	ErrorHandler(ioutil.WriteFile(outFile, blob, 777))
 
-	fmt.Println(fmt.Sprintf("SUCCESS: Train model and get Result in %s", outFile))
+	//fmt.Println(fmt.Sprintf("SUCCESS: Train model and get Result in %s", outFile))
+	output()
 
 	return nil
+}
+
+
+func output() {
+	fmt.Println("------------------------------------------------------------------")
+	fmt.Print("Liner regression -> TRAIN MODE")
+	fmt.Println("------------------------------------------------------------------")
+	fmt.Println(fmt.Sprintf("SUCCESS: Train model and get Result in %s", outFile))
+	fmt.Println("------------------------------------------------------------------")
 }

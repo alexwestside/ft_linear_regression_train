@@ -11,7 +11,7 @@ import (
 	"errors"
 )
 
-const pngFile = "stdout/regression.png"
+const pngFile = "graphs/regression.png"
 
 func (m *Model) View() error {
 
