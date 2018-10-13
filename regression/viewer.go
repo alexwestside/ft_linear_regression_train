@@ -51,7 +51,6 @@ func (m *Model) View() error {
 	s.GlyphStyle.Radius = vg.Points(2)
 	s.GlyphStyle.Color = color.RGBA{R: 0, G: 0, B: 255, A: 255}
 
-	//Add the line plot points for the predictions.
 	line, e := plotter.NewLine(ptsPred)
 	if e != nil {
 		fmt.Println(err)
@@ -60,13 +59,12 @@ func (m *Model) View() error {
 	line.LineStyle.Dashes = []vg.Length{vg.Points(2), vg.Points(2)}
 	line.LineStyle.Color = color.RGBA{R: 255, G: 0, B: 0, A: 255}
 
-	//// Save the plot to a PNG file.
 	p.Add(s, line)
 	if err := p.Save(15*vg.Centimeter, 15*vg.Centimeter, pngFile); err != nil {
 		fmt.Println(err)
 	}
 
-	fmt.Println(fmt.Sprintf("SUCCESS: Train model and get Graph in %s", pngFile))
+	output("VIEW MODE", "Plot model and get Graph", pngFile)
 
 	return nil
 }
