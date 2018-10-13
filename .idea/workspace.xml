@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f00b5aa7-7e38-45e4-8f32-a6e8bb469816" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/regression/output.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regression/viewer.go" beforeDir="false" afterPath="$PROJECT_DIR$/regression/viewer.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/regression/writer.go" beforeDir="false" afterPath="$PROJECT_DIR$/regression/writer.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,11 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#14#95#0" expanded="true" />
               </folding>
@@ -82,8 +79,11 @@
       <file leaf-file-name="commands.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmd/commands.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="22" column="83" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
+            <state relative-caret-position="615">
+              <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+              <folding>
+                <element signature="e#13#101#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,16 +92,16 @@
         <entry file="file://$PROJECT_DIR$/regression/viewer.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="511">
-              <caret line="61" column="18" lean-forward="true" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+              <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="writer.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="writer.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/regression/writer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="300">
+              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
               <folding>
                 <element signature="e#20#76#0" expanded="true" />
               </folding>
@@ -177,8 +177,8 @@
         <option value="$PROJECT_DIR$/regression/closer.go" />
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/regression/output.go" />
-        <option value="$PROJECT_DIR$/regression/writer.go" />
         <option value="$PROJECT_DIR$/regression/viewer.go" />
+        <option value="$PROJECT_DIR$/regression/writer.go" />
       </list>
     </option>
   </component>
@@ -192,8 +192,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="2560" />
-    <option name="height" value="1440" />
+    <option name="y" value="-30" />
+    <option name="width" value="1920" />
+    <option name="height" value="1110" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -265,15 +266,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25860807" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25860807" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.26373628" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.26373628" />
       <window_info anchor="right" id="Jenkins" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -336,6 +338,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="22" column="83" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
+          <folding>
+            <element signature="e#13#101#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -449,9 +454,6 @@
     <entry file="file:///usr/local/Cellar/go/1.10.3/libexec/src/os/stat.go" />
     <entry file="file:///usr/local/Cellar/go/1.10.3/libexec/src/os/error.go" />
     <entry file="file:///usr/local/Cellar/go/1.10.3/libexec/src/io/io.go" />
-    <entry file="file://$PROJECT_DIR$/data.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gopkg.lock">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -543,36 +545,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/regression/writer.go">
+    <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <element signature="e#20#76#0" expanded="true" />
+            <element signature="e#14#95#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/regression/viewer.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="511">
-          <caret line="61" column="18" lean-forward="true" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmd/commands.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="83" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
+        <state relative-caret-position="615">
+          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding>
+            <element signature="e#13#101#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/regression/writer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="300">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
           <folding>
-            <element signature="e#14#95#0" expanded="true" />
+            <element signature="e#20#76#0" expanded="true" />
           </folding>
         </state>
       </provider>
