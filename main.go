@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ft_linear_regression_train/cmd"
+	"github.com/ft_linear_regression/ft_linear_regression_train/cmd"
 	"github.com/spf13/cobra"
 )
 
